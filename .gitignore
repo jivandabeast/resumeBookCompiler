@@ -3,3 +3,4 @@
 
 /Output/*
 !/Output/1-title.pdf
+!/Output/meta.txt

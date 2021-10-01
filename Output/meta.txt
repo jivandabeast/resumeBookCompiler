@@ -1,0 +1,42 @@
+InfoBegin
+InfoKey: ModDate
+InfoValue: D:20211001044556+00'00'
+InfoBegin
+InfoKey: CreationDate
+InfoValue: D:20211001044556+00'00'
+InfoBegin
+InfoKey: Author
+InfoValue: Jivan RamjiSingh
+InfoBegin
+InfoKey: Title
+InfoValue: Ualbany Cyber Jobs Fair
+InfoBegin
+InfoKey: Keywords
+InfoValue: DAErgTMyWdI,BADq15fc8Go
+InfoBegin
+InfoKey: Creator
+InfoValue: Canva
+InfoBegin
+InfoKey: Producer
+InfoValue: Canva
+PdfID0: 921b46f80a8cb536855c26eb5e7f7155
+PdfID1: 921b46f80a8cb536855c26eb5e7f7155
+NumberOfPages: 2
+BookmarkBegin
+BookmarkTitle: Title
+BookmarkLevel: 1
+BookmarkPageNumber: 1
+BookmarkBegin
+BookmarkTitle: Table of Contents
+BookmarkLevel: 1
+BookmarkPageNumber: 2
+PageMediaBegin
+PageMediaNumber: 1
+PageMediaRotation: 0
+PageMediaRect: 0 7.92001 612 799.92
+PageMediaDimensions: 612 792
+PageMediaBegin
+PageMediaNumber: 2
+PageMediaRotation: 0
+PageMediaRect: 0 7.92001 612 799.92
+PageMediaDimensions: 612 792
