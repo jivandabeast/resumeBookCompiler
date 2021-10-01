@@ -91,8 +91,7 @@ function autoRun() {
     echo "Beginning final compilation."
     compilePDF "Output/*.pdf"
     mv temp.pdf Output/ResumeBookFinal.pdf
-    # pdftk $(Output/*.pdf) cat output "Output/ResumeBookFinal.pdf"
-    # rm "Output/2-graduates.pdf" "Output/3-seniors.pdf" "Output/4-juniors.pdf" "Output/5-sophomores.pdf" "Output/6-freshmen.pdf"
+    rm "Output/2-graduates.pdf" "Output/3-seniors.pdf" "Output/4-juniors.pdf" "Output/5-sophomores.pdf" "Output/6-freshmen.pdf" "meta.txt"
     echo "Program complete."
 }
 
