@@ -8,21 +8,8 @@ function compilePDF() {
     else
         fileCard=$1
     fi
-    # $1 - file choice
-    # echo ""
-    
-    # echo "What files would you like to combine? (ex. Resumes/*.pdf)"
-    # read fileCard
-    # echo "Compiling PDFs for $fileCard..."
     pdftk $fileCard cat output temp.pdf
-    
-    # echo "Compiling PDFs for $1..."
-    # pdftk $1 cat output temp.pdf
-    
-    # echo "Exporting metadata file..."
     pdftk temp.pdf dump_data output meta.txt
-    
-    # echo "Done."
 }
 
 function metaDataBookmark() {
@@ -40,32 +27,12 @@ function metaDataBookmark() {
         bookmarkPage=$3
     fi
 
-    # echo "What is the name of the bookmark you would like to add?"
-    # read bookmarkName
-    # echo "What level should the bookmark be? (Usually 1 or 2)"
-    # read bookmarkLevel
-    # echo "What page is the bookmark on?"
-    # read bookmarkPage
-    # echo ""
-    # echo "Adding bookmark to metadata file..."
     echo "BookmarkBegin" >> meta.txt
     echo "BookmarkTitle: $bookmarkName" >> meta.txt
     echo "BookmarkLevel: $bookmarkLevel" >> meta.txt
     echo "BookmarkPageNumber: $bookmarkPage" >> meta.txt
-
-    # echo "Adding bookmark to metadata file..."
-    # echo "BookmarkBegin" >> meta.txt
-    # echo "BookmarkTitle: $1" >> meta.txt
-    # echo "BookmarkLevel: $2" >> meta.txt
-    # echo "BookmarkPageNumber: $3" >> meta.txt
-
-    # echo "Done."
 }
 
-# function updateMetaData() {
-#     # $1 final file name/location
-#     pdftk temp.pdf update_info meta.txt output "$1"
-# }
 
 function semiAutoRun() {
     if [[ $# -eq 0 ]]
@@ -86,22 +53,21 @@ function semiAutoRun() {
 
     finalPageCount=1
     for f in $fileCard; do
-        echo ""
         pageCount=$(strings < "$f" | sed -n 's|.*/Count -\{0,1\}\([0-9]\{1,\}\).*|\1|p' | sort -rn | head -n 1)
         fileName=$(basename "$f" | cut -d "." -f 1)
-        # let finalPageCount=$finalPageCount+$pageCount
         if [[ $fileName == "1-cover" ]]
             then metaDataBookmark "$sectionName" 1 $finalPageCount
         else
             metaDataBookmark "$fileName" 2 $finalPageCount
         fi
-        let finalPageCount=$finalPageCount+$pageCount
+        if let finalPageCount=$finalPageCount+$pageCount ; then
+            true
+        else 
+            echo "increment failed on $fileName"
+        fi
     done
 
-    # updateMetaData "$finalName"
     pdftk temp.pdf update_info meta.txt output "$finalName"
-
-    echo "$finalName done."
 }
 
 function autoRun() {
