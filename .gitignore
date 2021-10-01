@@ -1,0 +1,5 @@
+/Resumes/*
+!/Resumes/1-cover.*
+
+/Output/*
+!/Output/1-title.pdf
