@@ -84,9 +84,9 @@ function autoRun() {
     echo "Running sophomore student compilation..."
     semiAutoRun "Resumes/*.sophomore.pdf" "Sophomores" "Output/5-sophomores.pdf"
     echo "Done."
-    # echo "Running freshman student compilation..."
-    # semiAutoRun "Resumes/*.freshman.pdf" "Freshmen" "Output/6-freshmen.pdf"
-    # echo "Done."
+    echo "Running freshman student compilation..."
+    semiAutoRun "Resumes/*.freshman.pdf" "Freshmen" "Output/6-freshmen.pdf"
+    echo "Done."
 
     echo "Beginning final compilation."
     compilePDF "Output/*.pdf"

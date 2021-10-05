@@ -1,6 +1,5 @@
 # Resume Book Compiler
-## Designed for the UAlbany Cyber Jobs Fair
-### Could also be adapted for other automated PDF compilation applications
+Designed for the UAlbany Cyber Jobs Fair, *could also be adapted for other automated PDF compilation applications*
 
 ## Requirements
 The only requirement is the command line tool `pdftk`, which can be installed with the command `sudo snap install pdftk`.
