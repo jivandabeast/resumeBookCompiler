@@ -111,7 +111,7 @@ Choose an option: "
             3) semiAutoRun ; menu ;;
             4) autoRun ; menu ;;
             0) exit 0 ;;
-            *) echo -e $red"Wrong option."$clear; WrongCommand;;
+            *) echo -e $red"Please select from the available options"$clear; menu;;
         esac
 }
 
